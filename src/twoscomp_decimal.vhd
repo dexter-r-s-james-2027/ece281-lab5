@@ -33,7 +33,7 @@ begin
             decimal_value := binary_value;
         end if;
         
-        o_hund <= std_logic_vector(to_unsigned(decimal_value/100, 4));
+        o_hund <= std_logic_vector(to_unsigned(decimal_value/100, 4)); --outputs binary
         decimal_value := decimal_value mod 100;
         o_tens <= std_logic_vector(to_unsigned(decimal_value/10, 4));
         decimal_value := decimal_value mod 10;

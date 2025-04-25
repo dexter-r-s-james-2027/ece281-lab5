@@ -119,16 +119,17 @@ begin
         ----------------------------------------------------------------------------
         --  5. SUB - negative result with overflow (3 - 10 = -7)
         ----------------------------------------------------------------------------
-        w_A  <= to_vec(3);
-        w_B  <= to_vec(10);
-        w_op <= OP_SUB;
+        w_A  <= "11111100";
+        w_B  <= "10000001";
+        w_op <= OP_ADD;
         wait for k_step;
 
-        assert w_result = x"F9"              -- 0xF9 = -7
-            report "SUB 3-10: wrong result" severity error;
-        assert w_flags  = "1001"             -- N=1 Z=0 C=0 V=1
+        assert w_result = "01111101"              -- 0xF9 = -7
+            report "SUB -4-127: wrong result" severity error;
+        assert w_flags  = "0011"             -- N=1 Z=0 C=0 V=1
             report "SUB 3-10: wrong NZCV" severity error;
 
+        wait for k_step; 
         ----------------------------------------------------------------------------
         --  6. AND  (0x55 & 0x0F = 0x05)
         ----------------------------------------------------------------------------
