@@ -127,7 +127,7 @@ begin
     
     --overflow 
     not_alu_one <= not i_op(1); --we're doing addition or subtraction
-    xnor_part <= not ( i_A(7) xor  B_mod(7)  xor i_op(0)  ); -- A and B have same signs for addition, or different signs for subtraction
+    xnor_part <= not ( i_A(7) xor  i_B(7)  xor i_op(0)  ); -- A and B have same signs for addition, or different signs for subtraction
                                     -- imagine a triple gate xnnor
     xor_part <= i_A(7) xor alu_result(7) ; -- A and Sum have different signs. 
     
