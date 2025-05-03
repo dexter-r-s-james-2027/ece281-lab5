@@ -267,9 +267,9 @@ begin
 	-- LEDs
 	led(3 downto 0) <= w_cycle;
 	led(10 downto 4) <= (others => '0');
-	led(12) <= '0';
+	led(11) <= '0';
 	led(15 downto 13) <=  flags(3 downto 1);
-	led(11) <= flags(0); 
+	led(12) <= flags(0); 
 	
 	
 end top_basys3_arch;
