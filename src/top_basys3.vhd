@@ -179,7 +179,7 @@ begin
                i_B => b_reg,
                i_op => op_code,
                o_result => alu_out,
-               o_flags => flags
+               o_flags => led(15 downto 12)
         ); 
                    	
     twos_comp_inst : twos_comp	
@@ -268,8 +268,8 @@ begin
 	led(3 downto 0) <= w_cycle;
 	led(10 downto 4) <= (others => '0');
 	led(11) <= '0';
-	led(15 downto 13) <=  flags(3 downto 1);
-	led(12) <= flags(0); 
+	--led(15 downto 13) <=  flags(3 downto 1);
+	--led(12) <= flags(0); 
 	
 	
 end top_basys3_arch;
