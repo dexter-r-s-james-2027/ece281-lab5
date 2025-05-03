@@ -82,7 +82,8 @@ begin
     
     Cin <= '1' when i_op = "001" else '0'; -- if subtraction, need a carry in to add one more to B
     
-    ripple_adder_1: ripple_adder --adds the two halves of the two numbers
+    
+    ripple_adder_1: ripple_adder 
         port map (
             A    => A_lo,
             B    => B_lo,
@@ -91,6 +92,7 @@ begin
             Cout => carry_lo
         );
         
+    --adds the two halves of the two numbers    
     ripple_adder_2: ripple_adder
         port map (
             A    => A_hi,
